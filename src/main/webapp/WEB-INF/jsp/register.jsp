@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>SIGN IN</title>
+    <title>SIGN UP</title>
 </head>
 <body>
 <div id="header" style="height: 72px; background-color: black">
@@ -24,10 +24,12 @@
     </table>
 </div>
 <div>
-    <form action="/login" method="post">
+    <form action="/register" method="post">
         Enter login: <input name="login"/><br/>
-        Enter pass: <input type="password" name="pass1"/><br/>
-        Enter again: <input type="password" name="pass2"/><br/>
+        Enter pass: <input type="password" name="pass"/><br/>
+        Enter phone: <input name="phone"/><br/>
+        Enter email: <input name="email"/><br/>
+        Enter city: <input name="city"/><br/>
         <input type="submit" value="Sign In"/>
     </form>
 </div>
