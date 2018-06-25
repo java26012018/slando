@@ -2,24 +2,36 @@ package dao;
 
 import entity.User;
 import hibernate.HibernateUtil;
+import org.hibernate.Session;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Service
 public class UserDao {
-    @Transactional
     public User getByLogin(String login) {
-        return (User) HibernateUtil.getSession().createQuery(String.format("FROM User WHERE login='%s'", login)).uniqueResult();
+        Session s = HibernateUtil.getSession();
+        List<User> users = s.createCriteria(User.class).list();
+        s.close();
+        for (User item : users) {
+            if (item.getLogin().equals(login)) {
+
+                return item;
+            }
+        }
+        return null;
     }
 
-    @Transactional
     public boolean add(@NotNull User user) {
         if (getByLogin(user.getLogin()) != null) {
             return false;
         } else {
-            HibernateUtil.getSession().save(user);
+            Session s = HibernateUtil.getSession();
+            s.beginTransaction();
+            s.save(user);
+            s.getTransaction().commit();
+            s.close();
             return true;
         }
     }

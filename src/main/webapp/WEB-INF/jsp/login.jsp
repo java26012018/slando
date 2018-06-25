@@ -26,8 +26,7 @@
 <div>
     <form action="/login" method="post">
         Enter login: <input name="login"/><br/>
-        Enter pass: <input type="password" name="pass1"/><br/>
-        Enter again: <input type="password" name="pass2"/><br/>
+        Enter pass: <input type="password" name="pass"/><br/>
         <input type="submit" value="Sign In"/>
     </form>
 </div>

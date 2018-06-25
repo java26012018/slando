@@ -2,15 +2,19 @@ package dao;
 
 import entity.Item;
 import hibernate.HibernateUtil;
+import org.hibernate.Criteria;
+import org.hibernate.Session;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
 public class ItemDao {
-    @Transactional
     public List<Item> get() {
-        return HibernateUtil.getSession().createCriteria(Item.class).list();
+        Session s = HibernateUtil.getSession();
+        Criteria c = s.createCriteria(Item.class);
+        List<Item> out = c.list();
+        s.close();
+        return out;
     }
 }
