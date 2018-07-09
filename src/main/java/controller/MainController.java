@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,7 +23,11 @@ public class MainController {
     }
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public ModelAndView main(HttpServletRequest req) {
+    public ModelAndView main(@RequestParam(required = false) String exit,
+                             HttpServletRequest req) {
+        if (exit != null) {
+            req.getSession().removeAttribute("user");
+        }
         User u = (User) req.getSession().getAttribute("user");
         ModelAndView model = new ModelAndView(INDEX_JSP);
         model.addObject("items", idao.get());
