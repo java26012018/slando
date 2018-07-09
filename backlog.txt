@@ -1,0 +1,28 @@
+9.07.2018
+
+1) Create 'Item getById(String id)' method in ItemDao and ItemService
+2) Create ItemController to work with '/item?id=' get request
+3) Create link to single item in index.jsp (a href='/item?id=${item.id}') when image clicked
+
+4) Create 'Add' button in header (for logined users)
+5) Create 'void add(Item i)' method in ItemDao and ItemService
+6) Create AddController witch adds an item (for logined users)
+7) Create 'add.jsp'
+
+8) Create 'edit profile' button in main header
+9) Create EditProfileController with get and post methods
+10)Create 'editProfile.jsp'
+
+11)Create 'edit item' button on each logined user's item
+12)Create EditItemController with get and post methods
+13)Create 'editItem.jsp'
+
+14)Create 'my favourites' button in main header for logined users
+15)Create 'add to favourites' button for each item (for logined users)
+15)Create FavouritesController with get method
+16)Create 'favourites.jsp'
+
+17)Add logic to 'up' and 'to top' operations on my profile page
+18)Add 'up()' and 'toTop()' methods in EditItem
+19)Create block of top items (3 random items from all with top)
+
