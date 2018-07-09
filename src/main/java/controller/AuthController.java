@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Date;
@@ -20,8 +21,12 @@ public class AuthController {
     private static final String REGISTER_JSP = "register";
     private static final String LOGIN_JSP = "login";
 
+    private final UserDao udao;
+
     @Autowired
-    private UserDao udao;
+    public AuthController(UserDao udao) {
+        this.udao = udao;
+    }
 
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public ModelAndView registerView() {
@@ -55,6 +60,18 @@ public class AuthController {
                     email,
                     city,
                     new Date()));
+        }
+        response.sendRedirect("/");
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public void login(@RequestParam String login,
+                      @RequestParam String pass,
+                      HttpServletResponse response,
+                      HttpServletRequest req) throws IOException {
+        User u = udao.getByLogin(login);
+        if (u != null && pass.equals(u.getPass())) {
+            req.getSession().setAttribute("user", u);
         }
         response.sendRedirect("/");
     }

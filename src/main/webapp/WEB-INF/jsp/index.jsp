@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>SLANDO - OLX</title>
@@ -21,6 +21,13 @@
                     <input type="submit" value="Sign Up"/>
                 </form>
             </td>
+            <c:if test="${not empty user}">
+                <td>
+                    <a href="/?exit=true">
+                        <input type="submit" value="Exit"/>
+                    </a>
+                </td>
+            </c:if>
         </tr>
     </table>
 </div>
