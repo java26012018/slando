@@ -1,7 +1,7 @@
 9.07.2018
 
-1) Create 'Item getById(String id)' method in ItemDao and ItemService
-2) Create ItemController to work with '/item?id=' get request
+1)+ Create 'Item getById(String id)' method in ItemDao and ItemService
+2)+ Create ItemController to work with '/item?id=' get request
 3) Create link to single item in index.jsp (a href='/item?id=${item.id}') when image clicked
 
 4) Create 'Add' button in header (for logined users)
