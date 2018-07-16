@@ -12,7 +12,7 @@ public class ItemDaoTest {
     private static final String CAT_KITCHEN = "kitchen";
     private static final String OWNER_VALERA = "Valera";
     private static final String INCORRECT_ID = "incorrect";
-    private static final String TEST_PARAM = "test_param";
+    public static final String TEST_PARAM = "test_param";
 
     private ItemDao idao = new ItemDao();
 

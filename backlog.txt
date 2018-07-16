@@ -7,7 +7,7 @@
 
 4)+ Create 'Add' button in header (for logined users)
 5)+ Create 'void add(Item i)' method in ItemDao and ItemService
-6) Create AddController witch adds an item (for logined users)
+6)+ Create AddController witch adds an item (for logined users)
 7) Create 'add.jsp'
 
 8) Create 'edit profile' button in main header
