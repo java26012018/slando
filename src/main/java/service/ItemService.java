@@ -20,4 +20,8 @@ public class ItemService {
     public List<Item> get() {
         return idao.get();
     }
+
+    public Item getById(String id) {
+        return idao.getById(id);
+    }
 }
