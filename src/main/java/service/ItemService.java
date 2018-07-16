@@ -24,4 +24,12 @@ public class ItemService {
     public Item getById(String id) {
         return idao.getById(id);
     }
+
+    public void add(Item i) {
+        idao.add(i);
+    }
+
+    public void delete(Item i) {
+        idao.delete(i);
+    }
 }

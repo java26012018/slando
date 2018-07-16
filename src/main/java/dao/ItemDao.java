@@ -26,4 +26,20 @@ public class ItemDao {
         s.close();
         return out;
     }
+
+    public void add(Item i) {
+        Session s = HibernateUtil.getSession();
+        s.beginTransaction();
+        s.save(i);
+        s.getTransaction().commit();
+        s.close();
+    }
+
+    public void delete(Item i) {
+        Session s = HibernateUtil.getSession();
+        s.beginTransaction();
+        s.delete(i);
+        s.getTransaction().commit();
+        s.close();
+    }
 }

@@ -27,6 +27,11 @@
                         <input type="submit" value="Exit"/>
                     </a>
                 </td>
+                <td>
+                    <form action="/add" method="get">
+                        <input type="submit" value="Add new item"/>
+                    </form>
+                </td>
             </c:if>
         </tr>
     </table>

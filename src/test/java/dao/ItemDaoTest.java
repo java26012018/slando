@@ -3,6 +3,8 @@ package dao;
 import entity.Item;
 import org.junit.Test;
 
+import java.util.Date;
+
 import static org.junit.Assert.*;
 
 public class ItemDaoTest {
@@ -10,6 +12,7 @@ public class ItemDaoTest {
     private static final String CAT_KITCHEN = "kitchen";
     private static final String OWNER_VALERA = "Valera";
     private static final String INCORRECT_ID = "incorrect";
+    private static final String TEST_PARAM = "test_param";
 
     private ItemDao idao = new ItemDao();
 
@@ -25,5 +28,21 @@ public class ItemDaoTest {
     public void getByIdTestIncorrectId() {
         Item i = idao.getById(INCORRECT_ID);
         assertNull(i);
+    }
+
+    @Test
+    public void addAndDeleteItemTest() {
+        Item i = new Item(TEST_PARAM, TEST_PARAM, TEST_PARAM, TEST_PARAM,
+                TEST_PARAM, TEST_PARAM, TEST_PARAM, TEST_PARAM, TEST_PARAM,
+                500, new Date(), false);
+        idao.add(i);
+        Item returned = idao.getById(TEST_PARAM);
+        assertNotNull(returned);
+        assertEquals(TEST_PARAM, returned.getId());
+        assertEquals(500, returned.getPrice());
+
+        idao.delete(returned);
+        returned = idao.getById(TEST_PARAM);
+        assertNull(returned);
     }
 }
