@@ -32,37 +32,36 @@
     </table>
 </div>
 <div id="content" style="background-color: aquamarine">
-    <c:forEach items="${items}" var="item">
-        <div style="width: 1000px; height: 250px; display: flex; justify-content: left">
-            <table>
-                <tr>
-                    <td>
-                        <a href="/item?id=${item.id}">
-                            <img src="${item.pic}" style="height: 200px"/>
-                        </a>
-                    </td>
-                    <td>
-                        <h4>${item.about}</h4>
-                    </td>
-                    <td>
-                        <h2>${item.owner}</h2>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <h1>${item.price} UAH</h1>
-                    </td>
-                    <td>
+    <div style="width: 1000px; height: 600px; display: flex; justify-content: left">
+        <table>
+            <tr>
+                <td>
+                    <h2>${item.name}</h2>
+                </td>
+            </tr>
+            <tr>
 
-                    </td>
-                    <td>
-                        <h4>${item.city}</h4>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <hr/>
-    </c:forEach>
+                <td>
+                    <img src="${item.pic}" style="height: 500px"/>
+                </td>
+                <td>
+                    <h4>${item.about}</h4>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h1>${item.price} UAH</h1>
+                </td>
+                <td>
+
+                </td>
+                <td>
+                    <h4>${item.city}</h4>
+                </td>
+            </tr>
+        </table>
+    </div>
+
 </div>
 </body>
 </html>
