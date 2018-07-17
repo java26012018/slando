@@ -35,4 +35,17 @@ public class UserDao {
             return true;
         }
     }
+    public void updateUser(User u, String pass, String phone, String email, String city){
+        Session s = HibernateUtil.getSession();
+        s.beginTransaction();
+
+        u.setPass(pass);
+        u.setPhone(phone);
+        u.setEmail(email);
+        u.setCity(city);
+
+        s.update(u);
+        s.getTransaction().commit();
+        s.close();
+    }
 }

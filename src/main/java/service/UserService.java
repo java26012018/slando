@@ -36,4 +36,7 @@ public class UserService {
     public User getByLogin(String login) {
         return udao.getByLogin(login);
     }
+    public void updateUser(User u, String pass, String phone, String email, String city){
+        udao.updateUser(u, pass, phone, email, city);
+    }
 }

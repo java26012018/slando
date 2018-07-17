@@ -32,6 +32,11 @@
                         <input type="submit" value="Add new item"/>
                     </form>
                 </td>
+                <td>
+                    <form action="/profile" method="get">
+                        <input type="submit" value="Edit profile"/>
+                    </form>
+                </td>
             </c:if>
         </tr>
     </table>
