@@ -29,13 +29,18 @@
                 </td>
                 <td>
                     <form action="/add" method="get">
-                        <input type="submit" value="Add new item"/>
+                        <input type="submit" value="Add New Item"/>
                     </form>
                 </td>
                 <td>
                     <form action="/profile" method="get">
-                        <input type="submit" value="Edit profile"/>
+                        <input type="submit" value="Edit Profile"/>
                     </form>
+                </td>
+                <td>
+                    <a href="/?owner=${user.login}" method="get">
+                        <input type="submit" value="My Items"/>
+                    </a>
                 </td>
             </c:if>
         </tr>
@@ -68,6 +73,13 @@
                     <td>
                         <h4>${item.city}</h4>
                     </td>
+                    <c:if test="${user.login == item.owner}">
+                        <td>
+                            <a href="/edit?id=${item.id}">
+                                <input type="submit" value="Edit Item"/>
+                            </a>
+                        </td>
+                    </c:if>
                 </tr>
             </table>
         </div>

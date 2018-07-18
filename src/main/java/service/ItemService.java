@@ -32,4 +32,8 @@ public class ItemService {
     public void delete(Item i) {
         idao.delete(i);
     }
+
+    public List<Item> getByOwner(String owner) {
+        return idao.getByOwner(owner);
+    }
 }

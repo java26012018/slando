@@ -20,7 +20,7 @@
 
 14)Create 'my favourites' button in main header for logined users
 15)Create 'add to favourites' button for each item (for logined users)
-15)Create FavouritesController with get method
+15)Create FavouritesController with get and post(to add to favourites) method
 16)Create 'favourites.jsp'
 
 17)Add logic to 'up' and 'to top' operations on my profile page
@@ -28,3 +28,14 @@
 19)Create block of top items (3 random items from all with top)
 
 20)Create tests for all untested modules
+
+21)add header.jsp which will include in all jsp's
+22)include header.jsp into all jsp's
+
+23)+Add 'my items' button in header.jsp which will show index.jsp with all user's items
+24)+Edit index.jsp to show 'edit item' button
+25)+Edit MainController to work with 'edit' parameter
+
+26)GLOBAL Create search by word and category logic
+
+27)Learn more about correct integration tests (for dao's) writing (with using H2 in-memory database)

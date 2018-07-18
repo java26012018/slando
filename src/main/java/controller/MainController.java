@@ -30,11 +30,12 @@ public class MainController {
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView main(@RequestParam(required = false) String exit,
+                             @RequestParam(required = false) String owner,
                              HttpServletRequest req) {
         userv.checkUserExit(req.getSession(), exit);
         User u = userv.getUserFromSession(req.getSession());
         ModelAndView model = new ModelAndView(INDEX_JSP);
-        model.addObject(ITEMS_ATTRIBUTE, iserv.get());
+        model.addObject(ITEMS_ATTRIBUTE, owner == null ? iserv.get() : iserv.getByOwner(owner));
         model.addObject(USER_ATTRIBUTE, u);
         return model;
     }

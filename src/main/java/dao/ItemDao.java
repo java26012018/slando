@@ -42,4 +42,11 @@ public class ItemDao {
         s.getTransaction().commit();
         s.close();
     }
+
+    public List<Item> getByOwner(String owner) {
+        Session s = HibernateUtil.getSession();
+        List<Item> out = s.createQuery("FROM Item WHERE owner='" + owner + "'").list();
+        s.close();
+        return out;
+    }
 }
