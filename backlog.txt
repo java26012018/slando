@@ -34,7 +34,7 @@
 
 23)+Add 'my items' button in header.jsp which will show index.jsp with all user's items
 24)+Edit index.jsp to show 'edit item' button
-25)+Edit MainController to work with 'edit' parameter
+25)+Edit MainController to work with 'edit'  parameter
 
 26)GLOBAL Create search by word and category logic
 
