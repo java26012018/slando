@@ -34,8 +34,8 @@ public class ItemControllerTest {
     }
 
     @Test
-    public void itemTest() {
-        ModelAndView model = itemController.item(ID);
+    public void itemPageTest() {
+        ModelAndView model = itemController.itemPage(ID);
         assertNotNull(model);
         assertEquals(ItemController.ITEM, model.getViewName());
         assertEquals(ID, ((Item) model.getModel().get(ItemController.ITEM)).getId());

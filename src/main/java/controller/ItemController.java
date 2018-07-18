@@ -20,7 +20,7 @@ public class ItemController {
     }
 
     @RequestMapping(value = "/item", method = RequestMethod.GET)
-    public ModelAndView item(@RequestParam String id) {
+    public ModelAndView itemPage(@RequestParam String id) {
         ModelAndView model = new ModelAndView(ITEM);
         model.addObject(ITEM, iserv.getById(id));
         return model;
