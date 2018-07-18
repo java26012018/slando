@@ -27,7 +27,7 @@ public class EditProfileController {
     }
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
-    public ModelAndView addPage(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public ModelAndView editPage(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         User user = userv.getUserFromSession(req.getSession());
         if (user == null) {
             resp.sendRedirect(MAIN_URL);
