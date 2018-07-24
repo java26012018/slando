@@ -1,6 +1,6 @@
 package controller;
 
-import entity.User;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +13,7 @@ import service.UserService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+
 
 @Controller
 public class AuthController {
@@ -56,8 +57,8 @@ public class AuthController {
                       @RequestParam String pass,
                       HttpServletResponse response,
                       HttpServletRequest req) throws IOException {
-        User u = userv.getByLogin(login);
-        authserv.usrLogin(u, pass, req.getSession());
+
+        authserv.usrLogin(userv.getByLogin(login), pass, req.getSession());
         response.sendRedirect("/");
     }
 }

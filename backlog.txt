@@ -14,9 +14,9 @@
 9)+ Create EditProfileController with get and post methods
 10)+Create 'editProfile.jsp'
 
-11)Create 'edit item' button on each logined user's item
-12)Create EditItemController with get and post methods
-13)Create 'editItem.jsp'
+11)+Create 'edit item' button on each logined user's item
+12)+Create EditItemController with get and post methods
+13)+Create 'editItem.jsp'
 
 14)Create 'my favourites' button in main header for logined users
 15)Create 'add to favourites' button for each item (for logined users)
@@ -29,13 +29,13 @@
 
 20)Create tests for all untested modules
 
-21)add header.jsp which will include in all jsp's
-22)include header.jsp into all jsp's
+21)+add header.jsp which will include in all jsp's
+22)+include header.jsp into all jsp's
 
 23)+Add 'my items' button in header.jsp which will show index.jsp with all user's items
 24)+Edit index.jsp to show 'edit item' button
 25)+Edit MainController to work with 'edit'  parameter
 
-26)GLOBAL Create search by word and category logic
+26)+GLOBAL Create search by word and category logic
 
 27)Learn more about correct integration tests (for dao's) writing (with using H2 in-memory database)

@@ -6,6 +6,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
 
 @Service
@@ -43,10 +44,34 @@ public class ItemDao {
         s.close();
     }
 
+
     public List<Item> getByOwner(String owner) {
         Session s = HibernateUtil.getSession();
         List<Item> out = s.createQuery("FROM Item WHERE owner='" + owner + "'").list();
         s.close();
         return out;
+    }
+
+    public List<Item> getBySearchRequest(String search) {
+        List<Item> allItems = get();
+        LinkedList items = new LinkedList<>();
+        for (Item i : allItems) {
+            if (i.getName().toLowerCase().contains(search.toLowerCase()) || i.getAbout().toLowerCase().contains(search.toLowerCase())) {
+                items.add(i);
+            }
+        }
+        return items;
+    }
+
+    public List<Item> getByCat(String cat) {
+        List<Item> allItems = get();
+        LinkedList listByCat = new LinkedList();
+
+        for (Item i : allItems) {
+            if (i.getCat().equals(cat)) {
+                listByCat.add(i);
+            }
+        }
+        return listByCat;
     }
 }

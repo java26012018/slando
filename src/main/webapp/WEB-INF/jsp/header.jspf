@@ -1,0 +1,70 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<div id="header" style="height: 95px; background-color: black; text-decoration-color: white">
+    <table>
+        <tr>
+            <td>
+                <a href="/">
+                    <img src="http://i.piccy.info/i9/899fac894a27492e489a38308c7a7333/1528739663/4352/1226734/logo_240.jpg"/>
+                </a>
+            </td>
+            <c:choose>
+                <c:when test="${empty user}">
+
+                    <td>
+                        <form action="/login" method="get">
+                            <input type="submit" value="Sign In"/>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/register" method="get">
+                            <input type="submit" value="Sign Up"/>
+                        </form>
+                    </td>
+                </c:when>
+                <c:when test="${not empty user}">
+                    <td>
+                        <a href="/?exit=true">
+                            <input type="submit" value="Exit"/>
+                        </a>
+                    </td>
+                    <td>
+                        <form action="/add" method="get">
+                            <input type="submit" value="Add New Item"/>
+                        </form>
+                    </td>
+                    <td>
+                        <form action="/profile" method="get">
+                            <input type="submit" value="Edit Profile"/>
+                        </form>
+                    </td>
+                    <td>
+                        <a href="/?owner=${user.login}" method="get">
+                            <input type="submit" value="My Items"/>
+                        </a>
+                    </td>
+                </c:when>
+            </c:choose>
+
+            <td>
+                <form action="/" method="get">
+                    <input type="text" name="search" value=""/>
+                    <input type="submit" value="search"/>
+                </form>
+            </td>
+            <td>
+                <form action="/">
+                    <select name="cat" required>
+                        <option></option>
+                        <option value="kitchen">kitchen</option>
+                        <option value="phone">phone</option>
+                        <option value="home">home</option>
+                        <option value="bedroom">bedroom</option>
+                        <option value="bath">bath</option>
+                        <option value="outhouse">outhouse</option>
+                    </select>
+                    <input type="submit" value="Search by category">
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>

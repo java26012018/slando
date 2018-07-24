@@ -33,15 +33,10 @@
         margin-left: 50px;
         margin-top: 5px;
     }
+
 </style>
 
-<table style="background: black; width: 100%">
-    <tr>
-        <td>
-            <img src="http://i.piccy.info/i9/899fac894a27492e489a38308c7a7333/1528739663/4352/1226734/logo_240.jpg"/>
-        </td>
-    </tr>
-</table>
+<jsp:directive.include file="header.jspf"/>
 <h2 style="text-align: center">Input just the fields you want to change in your profile</h2>
 <form method="post">
     <div class="container">

@@ -14,10 +14,10 @@ public class UserDao {
         Session s = HibernateUtil.getSession();
         List<User> users = s.createCriteria(User.class).list();
         s.close();
-        for (User item : users) {
-            if (item.getLogin().equals(login)) {
+        for (User user : users) {
+            if (user.getLogin().equals(login)) {
 
-                return item;
+                return user;
             }
         }
         return null;

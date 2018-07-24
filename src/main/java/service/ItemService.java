@@ -36,4 +36,22 @@ public class ItemService {
     public List<Item> getByOwner(String owner) {
         return idao.getByOwner(owner);
     }
+
+    public List<Item> getBySearchRequest(String search) {
+        return idao.getBySearchRequest(search);
+    }
+
+    public List<Item> getByCat(String cat) {
+        return idao.getByCat(cat);
+    }
+
+    public List<Item> getList(String search, String cat) {
+        List<Item> getList;
+        if (search != null && search != "") {
+            getList = getBySearchRequest(search);
+        } else if (cat != null) {
+            getList = getByCat(cat);
+        } else getList = get();
+        return getList;
+    }
 }

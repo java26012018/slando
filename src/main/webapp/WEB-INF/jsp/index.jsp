@@ -5,47 +5,7 @@
     <title>SLANDO - OLX</title>
 </head>
 <body>
-<div id="header" style="height: 72px; background-color: black">
-    <table>
-        <tr>
-            <td>
-                <img src="http://i.piccy.info/i9/899fac894a27492e489a38308c7a7333/1528739663/4352/1226734/logo_240.jpg"/>
-            </td>
-            <td>
-                <form action="/login" method="get">
-                    <input type="submit" value="Sign In"/>
-                </form>
-            </td>
-            <td>
-                <form action="/register" method="get">
-                    <input type="submit" value="Sign Up"/>
-                </form>
-            </td>
-            <c:if test="${not empty user}">
-                <td>
-                    <a href="/?exit=true">
-                        <input type="submit" value="Exit"/>
-                    </a>
-                </td>
-                <td>
-                    <form action="/add" method="get">
-                        <input type="submit" value="Add New Item"/>
-                    </form>
-                </td>
-                <td>
-                    <form action="/profile" method="get">
-                        <input type="submit" value="Edit Profile"/>
-                    </form>
-                </td>
-                <td>
-                    <a href="/?owner=${user.login}" method="get">
-                        <input type="submit" value="My Items"/>
-                    </a>
-                </td>
-            </c:if>
-        </tr>
-    </table>
-</div>
+<jsp:directive.include file="header.jspf"/>
 <div id="content" style="background-color: aquamarine">
     <c:forEach items="${items}" var="item">
         <div style="width: 1000px; height: 250px; display: flex; justify-content: left">

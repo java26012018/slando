@@ -31,11 +31,13 @@ public class MainController {
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public ModelAndView main(@RequestParam(required = false) String exit,
                              @RequestParam(required = false) String owner,
+                             @RequestParam(required = false) String search,
+                             @RequestParam(required = false) String cat,
                              HttpServletRequest req) {
         userv.checkUserExit(req.getSession(), exit);
         User u = userv.getUserFromSession(req.getSession());
         ModelAndView model = new ModelAndView(INDEX_JSP);
-        model.addObject(ITEMS_ATTRIBUTE, owner == null ? iserv.get() : iserv.getByOwner(owner));
+        model.addObject(ITEMS_ATTRIBUTE, owner == null ? iserv.getList(search, cat) : iserv.getByOwner(owner));
         model.addObject(USER_ATTRIBUTE, u);
         return model;
     }
